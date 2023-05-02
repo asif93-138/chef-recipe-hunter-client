@@ -5,8 +5,8 @@ import { useLoaderData } from 'react-router-dom';
 const Chefs = () => {
     const chefs = useLoaderData();
     return (
-        <div>
-            Chefs are here : {chefs.length}
+        <div className='d-flex flex-wrap'>
+            
             {
                 chefs.map(chef => <Chef 
                     key={chef.id}>
