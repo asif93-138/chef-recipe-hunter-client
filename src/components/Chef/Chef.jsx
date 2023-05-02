@@ -9,7 +9,7 @@ const Chef = (props) => {
             name: {chef_name} <br />
             recipes: {number_of_recipes} <br />
             experience: {years_of_experience}<br />
-            likes: {likes}
+            likes: {likes}<br />
             <Link to={`/${id}`}><button>Details</button></Link>
         </div>
     );

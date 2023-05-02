@@ -7,13 +7,16 @@ import { Link } from "react-router-dom";
 const Header = () => {
     return (
         <>
-        <Navbar bg="light" variant="light">
-          <Container>
-            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-            <Nav className="me-auto">
-              <Link to='/'>Home</Link>
-            </Nav>
-          </Container>
+        <Navbar collapseOnSelect expand="md" bg="light" variant="light">
+          
+          <Nav className="mx-auto">
+              <Navbar.Brand>RannaBanna</Navbar.Brand>
+              <Link className='nav-link' to='/'>Home</Link>
+              <Link className='nav-link' to='/Blog'>Blog</Link>
+              <Link className='nav-link' to='/login'>Log in</Link>
+              <Link className='nav-link' to='/signup'>Sign up</Link>
+           
+          </Nav>
         </Navbar>
       </>
     );
