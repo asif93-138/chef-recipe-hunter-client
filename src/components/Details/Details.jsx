@@ -4,7 +4,9 @@ import RCard from '../RCard/RCard';
 
 const Details = () => {
     const chef = useLoaderData();
+    
     const {id, chef_picture, chef_name, description, number_of_recipes, years_of_experience, recipes, likes} = chef;
+    
     return (
         <div>
             {id}<br />

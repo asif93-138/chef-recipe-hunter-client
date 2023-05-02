@@ -10,6 +10,8 @@ import Chefs from './components/Chefs/Chefs.jsx';
 import Details from './components/Details/Details.jsx';
 import LogIn from './components/LogIn/LogIn.jsx';
 import SignUp from './components/SignUp/SineUp.jsx';
+import PON from './components/PON/PON.jsx';
+import Blog from './components/Blog/Blog.jsx';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp />
+      },
+      {
+        path: "/blog",
+        element: <Blog />
+      },
+      {
+        path: '*',
+        element: <PON />
       }
     ]
   },

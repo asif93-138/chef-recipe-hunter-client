@@ -4,7 +4,8 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
 const Chef = (props) => {
-    const {id, chef_picture, chef_name, number_of_recipes, years_of_experience, likes} = props.children[1];
+    
+    const {id, chef_picture, chef_name, number_of_recipes, years_of_experience, likes} = props.chef;
     return (
         <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={chef_picture} />

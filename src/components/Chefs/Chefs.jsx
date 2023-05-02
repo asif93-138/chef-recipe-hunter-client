@@ -9,8 +9,8 @@ const Chefs = () => {
             
             {
                 chefs.map(chef => <Chef 
-                    key={chef.id}>
-                    chef={chef}                      
+                    key={chef.id}
+                    chef={chef}>                     
                     </Chef>)
             }
         </div>
