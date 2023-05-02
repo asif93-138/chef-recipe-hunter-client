@@ -8,6 +8,8 @@ import {
 import './index.css'
 import Chefs from './components/Chefs/Chefs.jsx';
 import Details from './components/Details/Details.jsx';
+import LogIn from './components/LogIn/LogIn.jsx';
+import SignUp from './components/SignUp/SineUp.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
         path: "/:id",
         element: <Details />,
         loader: ({params}) => fetch(`http://localhost:3000/chefs/${params.id}`)
+      },
+      {
+        path: "/login",
+        element: <LogIn />
+      },
+      {
+        path: "/signup",
+        element: <SignUp />
       }
     ]
   },
