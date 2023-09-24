@@ -10,13 +10,13 @@ const Chef = (props) => {
         <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={chef_picture} />
          <Card.Body>
-        <Card.Title>Chef</Card.Title>
-        <p>Name: {chef_name}</p>
+        <Card.Title>{chef_name}</Card.Title>
+        
         <p>Recipes: {number_of_recipes}</p>
         <p>Experience: {years_of_experience}</p>
         <p>Likes: {likes}</p>
         
-        <Link to={`/${id}`}><Button variant="primary">View Recipe</Button></Link>
+        <Link to={`/details/${id}`}><Button variant="primary">View Recipe</Button></Link>
         </Card.Body>
         </Card>
         

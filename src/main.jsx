@@ -12,6 +12,9 @@ import LogIn from './components/LogIn/LogIn.jsx';
 import SignUp from './components/SignUp/SineUp.jsx';
 import PON from './components/PON/PON.jsx';
 import Blog from './components/Blog/Blog.jsx';
+import AuthProvider from './providers/AuthProvider';
+import SecuredPage from './components/SecuredPage/SecuredPage.jsx';
+import PrivateRoute from './components/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -24,25 +27,29 @@ const router = createBrowserRouter([
         loader: () => fetch('http://localhost:3000/chefs')
       },
       {
-        path: "/:id",
+        path: "/details/:id",
         element: <Details />,
         loader: ({params}) => fetch(`http://localhost:3000/chefs/${params.id}`)
       },
       {
         path: "/login",
-        element: <LogIn />
+        element: <LogIn />,
       },
       {
         path: "/signup",
-        element: <SignUp />
+        element: <SignUp />,
       },
       {
         path: "/blog",
-        element: <Blog />
+        element: <Blog />,
+      },
+      {
+        path: "/protected",
+        element: <PrivateRoute><SecuredPage /></PrivateRoute>,
       },
       {
         path: '*',
-        element: <PON />
+        element: <PON />,
       }
     ]
   },
@@ -50,6 +57,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+   <AuthProvider>
+     <RouterProvider router={router} />
+   </AuthProvider>
   </React.StrictMode>,
 )

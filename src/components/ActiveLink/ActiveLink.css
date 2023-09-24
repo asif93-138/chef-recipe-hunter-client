@@ -1,0 +1,16 @@
+.active {
+    text-decoration: none;
+    padding: 8px;
+    color: black;
+    font-weight: 650;    
+    display: block;
+}
+.active:hover {
+    color: black;
+}
+
+@media screen and (max-width: 600px) {
+    .active {
+        padding: 8px 0;
+    }
+}

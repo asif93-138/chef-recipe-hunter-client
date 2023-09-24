@@ -6,11 +6,11 @@ import Toast from 'react-bootstrap/Toast';
 
 const RCard = (props) => {
     const [show, setShow] = useState(false);
-
-    const {id, image, name, ingredients, cookingmethod} = props.recipe;
+    function btBlur() {document.getElementById(`x-${id}`).disabled = 'disabled';}
+    const {id, image, name, ingredients, cookingmethod, ratings} = props.recipe;
     return (
         <div>
-            {id}, {image}, {name}, {ingredients}, {cookingmethod}
+            {id}, {image}, {name}, {ingredients}, {cookingmethod}, {ratings}
             <Row>
             <Col xs={6}>
         <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
@@ -27,7 +27,7 @@ const RCard = (props) => {
         </Toast>
       </Col>
       <Col xs={6}>
-        <Button onClick={() => setShow(true)}>Favourite</Button>
+        <Button id={`x-${id}`} onClick={() => {setShow(true); btBlur();}}>Favourite</Button>
       </Col>
             </Row>
         </div>
