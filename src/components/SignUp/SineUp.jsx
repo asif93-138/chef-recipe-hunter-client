@@ -49,7 +49,7 @@ const SineUp = () => {
           <input type='submit' value='submit' />
         </form> */}
     return (
-        <Form onSubmit={handleRegisterSubmit} className='container'>
+        <Form onSubmit={handleRegisterSubmit} className='container mt-4'>
           <h4 className='text-center'>Sign up here!</h4>
           <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Name</Form.Label>

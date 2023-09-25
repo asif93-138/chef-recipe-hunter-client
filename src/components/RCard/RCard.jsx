@@ -11,7 +11,7 @@ const RCard = (props) => {
     return (
         <div>
             {id}, {image}, {name}, {ingredients}, {cookingmethod}, {ratings}
-            <Row>
+            <Row className='m-0'>
             <Col xs={6}>
         <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
           <Toast.Header>

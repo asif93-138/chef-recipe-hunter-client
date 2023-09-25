@@ -1,0 +1,17 @@
+.fw-fix {
+    width: 20%;
+}
+
+.fw-fix-s {
+    width: 30%;
+}
+
+@media screen and (max-width: 600px) {
+    .fw-fix {
+        width: auto;
+    }
+    
+    .fw-fix-s {
+        width: auto;
+    }
+}
