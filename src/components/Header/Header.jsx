@@ -31,9 +31,9 @@ const Header = () => {
           <li className="nav-item">
           <ActiveLink className='nav-link' to='/protected'>Protected</ActiveLink>
           </li>
-          <li className="nav-item">
-          {loggedinuser ? <><Link className='nav-link' onClick={signedout}>Log out</Link><img title={loggedinuser?.displayName} src={loggedinuser.photoURL} className='w-fix rounded-circle ms-1' /></>:<ActiveLink className='nav-link' to='/login'>Login</ActiveLink>}
-          </li>
+          
+          {loggedinuser ? <><li className="nav-item"><Link className='nav-link' onClick={signedout}>Log out</Link></li><li className="nav-item"><img title={loggedinuser?.displayName} src={loggedinuser.photoURL} className='w-fix rounded-circle ms-1' /></li></>:<li className="nav-item"><ActiveLink className='nav-link' to='/login'>Login</ActiveLink></li>}
+          
           </ul>
       
           </div>

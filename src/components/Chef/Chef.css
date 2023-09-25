@@ -1,0 +1,14 @@
+.p-ref {
+    position: relative;
+    height: 420px;
+}
+.p-fix {
+    position: absolute;
+    bottom: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .p-ref {
+        margin: 20px;
+    }
+}

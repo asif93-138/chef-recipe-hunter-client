@@ -1,4 +1,5 @@
 import React from 'react';
+import './Chef.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
@@ -7,9 +8,9 @@ const Chef = (props) => {
     
     const {id, chef_picture, chef_name, number_of_recipes, years_of_experience, likes} = props.chef;
     return (
-        <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={chef_picture} />
-         <Card.Body>
+        <Card className='p-ref' style={{ width: '18rem' }}>
+        <Card.Img style={{ height: '180px' }} variant="top" src={chef_picture} />
+         <Card.Body className='p-fix'>
         <Card.Title>{chef_name}</Card.Title>
         
         <p>Recipes: {number_of_recipes}</p>

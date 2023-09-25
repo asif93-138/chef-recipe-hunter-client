@@ -1,11 +1,13 @@
 import React from 'react';
+import './Chefs.css';
+import Container from 'react-bootstrap/Container';
 import Chef from '../Chef/Chef'
 import { useLoaderData } from 'react-router-dom';
 
 const Chefs = () => {
     const chefs = useLoaderData();
     return (
-        <div className='d-flex flex-wrap'>
+        <Container className='c-grid'>
             
             {
                 chefs.map(chef => <Chef 
@@ -13,7 +15,7 @@ const Chefs = () => {
                     chef={chef}>                     
                     </Chef>)
             }
-        </div>
+        </Container>
     );
 };
 
