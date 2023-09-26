@@ -9,7 +9,7 @@ const Chefs = () => {
     return (
         <>
             
-            {/* <Container id="demo" className="carousel slide" data-bs-ride="carousel">
+            <Container id="demo" className="carousel slide" data-bs-ride="carousel">
 
                 
                 <div className="carousel-indicators">
@@ -74,8 +74,8 @@ const Chefs = () => {
                 <button className="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
                     <span className="carousel-control-next-icon"></span>
                 </button>
-            </Container> */}
-            {/* <Container className='c-grid'>
+            </Container>
+            <Container className='c-grid'>
 
                 {
                     chefs.map(chef => <Chef
@@ -83,7 +83,7 @@ const Chefs = () => {
                         chef={chef}>
                     </Chef>)
                 }
-            </Container> */}
+            </Container>
         </>
     );
 };
