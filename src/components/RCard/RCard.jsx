@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -9,7 +10,7 @@ const RCard = (props) => {
     function btBlur() {document.getElementById(`x-${id}`).disabled = 'disabled';}
     const {id, image, name, ingredients, cookingmethod, ratings} = props.recipe;
     return (
-        <div>
+        <Container>
             {id}, {image}, {name}, {ingredients}, {cookingmethod}, {ratings}
             <Row className='m-0'>
             <Col xs={6}>
@@ -30,7 +31,7 @@ const RCard = (props) => {
         <Button id={`x-${id}`} onClick={() => {setShow(true); btBlur();}}>Favourite</Button>
       </Col>
             </Row>
-        </div>
+        </Container>
     );
 };
 

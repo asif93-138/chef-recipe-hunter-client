@@ -17,11 +17,11 @@ const Details = () => {
             {number_of_recipes}<br />
             {years_of_experience}<br />
             {likes}<br />
-            <div>
+            <Container>
                 {
                     recipes.map(recipe => <RCard key={recipe.id} recipe={recipe}></RCard>)
                 }
-            </div>
+            </Container>
         </Container>
     );
 };
