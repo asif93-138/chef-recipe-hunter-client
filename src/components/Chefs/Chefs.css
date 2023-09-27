@@ -2,11 +2,14 @@
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 30px;
-    margin: 20px;
-    width: 70%;
+    /* margin: 20px; */
+    /* width: 70%; */
 }
 .slide-img {
     width: 100%;
+}
+.sidebar {
+    border: solid;
 }
 
 @media screen and (max-width: 600px) {

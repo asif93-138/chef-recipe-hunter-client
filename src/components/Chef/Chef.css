@@ -9,6 +9,7 @@
 
 @media screen and (max-width: 600px) {
     .p-ref {
-        margin: 20px;
+        margin: 20px 0;
+        width: auto !important;
     }
 }
