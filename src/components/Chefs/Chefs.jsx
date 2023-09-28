@@ -84,8 +84,13 @@ const Chefs = () => {
                         </Chef>)
                     }
                 </Container>
+                <Container>
                 <Container className='sidebar'>
                     <p>Submit your recipe Here!</p>
+                </Container>
+                <Container className='sidebar'>
+                    <p>Follow Us!</p>
+                </Container>
                 </Container>
             </Container>
         </>

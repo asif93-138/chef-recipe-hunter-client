@@ -10,6 +10,8 @@
 }
 .sidebar {
     border: 1px solid;
+    margin: 20px auto;
+    height: 45%;
 }
 
 @media screen and (max-width: 600px) {
@@ -17,5 +19,8 @@
         display: block;
         margin: 10px;
         width: auto;
+    }
+    .sidebar {
+        height: auto !important;
     }
 }
