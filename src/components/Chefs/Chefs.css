@@ -9,9 +9,15 @@
     width: 100%;
 }
 .sidebar {
-    border: 1px solid;
     margin: 20px auto;
     height: 45%;
+}
+.sideb-2 {
+    border: 1px solid;
+}
+.txt-a {
+    width: 100%;
+    resize: none;
 }
 
 @media screen and (max-width: 600px) {
@@ -20,7 +26,17 @@
         margin: 10px;
         width: auto;
     }
+    .inp-wfix {
+        width: 100%;
+    }
     .sidebar {
         height: auto !important;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .svg-f {
+        width: 30px;
+        height: 30px;
+        margin: 10px 20px;
     }
 }
