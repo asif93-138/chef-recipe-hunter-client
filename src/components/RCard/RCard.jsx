@@ -8,12 +8,16 @@ import Toast from 'react-bootstrap/Toast';
 const RCard = (props) => {
     const [show, setShow] = useState(false);
     function btBlur() {document.getElementById(`x-${id}`).disabled = 'disabled';}
-    const {id, image, name, ingredients, cookingmethod, ratings} = props.recipe;
+    const {id, name, ingredients, cookingmethod, ratings} = props.recipe;
     return (
-        <Container>
-            {id}, {image}, {name}, {ingredients}, {cookingmethod}, {ratings}
+        <Container className='my-4'>
+          <h5>Recipe : {id}</h5>
+          <h5>Recipe name : {name}</h5>
+          <p><strong>Ingredients : </strong>{ingredients}</p>
+          <p><strong>Cooking Method : </strong>{cookingmethod}</p>
+          <p><strong>Ratings : </strong>{ratings}</p>
             <Row className='m-0'>
-            <Col xs={6}>
+            <Col>
         <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
           <Toast.Header>
             <img
@@ -24,11 +28,11 @@ const RCard = (props) => {
             <strong className="me-auto">Toast!</strong>
             
           </Toast.Header>
-          <Toast.Body>Added to favourites!</Toast.Body>
+          <Toast.Body>Added to favorites!</Toast.Body>
         </Toast>
       </Col>
-      <Col xs={6}>
-        <Button id={`x-${id}`} onClick={() => {setShow(true); btBlur();}}>Favourite</Button>
+      <Col>
+        <Button id={`x-${id}`} onClick={() => {setShow(true); btBlur();}}>Make it Favorite</Button>
       </Col>
             </Row>
         </Container>

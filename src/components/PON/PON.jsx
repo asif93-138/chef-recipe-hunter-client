@@ -2,9 +2,7 @@ import React from 'react';
 
 const PON = () => {
     return (
-        <div>
-            444444440444444
-        </div>
+        <img className='img-fluid' src='https://learn.getgrav.org/user/pages/11.troubleshooting/01.page-not-found/error-404.png' />
     );
 };
 

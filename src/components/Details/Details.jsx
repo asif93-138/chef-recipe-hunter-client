@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import RCard from '../RCard/RCard';
 import { Container } from 'react-bootstrap';
+import './Details.css';
 
 const Details = () => {
     const chef = useLoaderData();
@@ -10,14 +11,18 @@ const Details = () => {
     
     return (
         <Container>
-            {id}<br />
-            {chef_name}<br />
-            {chef_picture}<br />
-            {description}<br />
-            {number_of_recipes}<br />
-            {years_of_experience}<br />
-            {likes}<br />
+            <Container className='d-lg-flex justify-content-between align-items-center my-4'>
+                <img src={chef_picture} className='img-fluid w-50 r-img-w' />
+                <div className=''>
+                <h3>Name : {chef_name}</h3>
+                <h4>Years of Experience : {years_of_experience}</h4>
+                <h4>Number of Recipes : {number_of_recipes}</h4>
+                <h4>Likes : {likes}</h4>
+                </div>
+                
+            </Container>
             <Container>
+                <p><strong>Bio : </strong> {description}</p>
                 {
                     recipes.map(recipe => <RCard key={recipe.id} recipe={recipe}></RCard>)
                 }

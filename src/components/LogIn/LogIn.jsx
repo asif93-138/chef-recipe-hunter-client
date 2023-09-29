@@ -102,7 +102,7 @@ const LogIn = () => {
       
 
     return ( <>
-      <Form onSubmit={handleLogIn} className='container mt-4'>
+      {!loggedinuser && <Form onSubmit={handleLogIn} className='container mt-4'>
       <article className='text-center'>
       <h4>Log In here!</h4>
       <p>Don't have an account <Link className='text-decoration-none' to='/signup'>register here</Link>!</p>
@@ -124,7 +124,8 @@ const LogIn = () => {
   <p>{success}</p>
   <Button variant="primary" type="submit">
     Submit
-   </Button></Form><br /><br />
+   </Button></Form>}
+      <br /><br />
       {gError}
     { loggedinuser ? <><button onClick={signedout}>Log out</button></> : <><button onClick={googleSignIn}>Google Sign In</button> &nbsp; <button onClick={githubSignIn}>GitHub Signin</button></>}{loggedinuser && <><p>user : {loggedinuser.displayName}</p><p>email : {loggedinuser.email}</p><img className='img-fluid' src={loggedinuser.photoURL} /></>}
     

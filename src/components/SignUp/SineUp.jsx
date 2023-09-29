@@ -1,10 +1,12 @@
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import app from '../../firebase/firebase.config';
+import { AuthContext } from '../../providers/AuthProvider';
 
-const SineUp = () => {
+const SineUp = () => {  
+  const {loggedinuser} = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -49,31 +51,33 @@ const SineUp = () => {
           <input type='submit' value='submit' />
         </form> */}
     return (
-        <Form onSubmit={handleRegisterSubmit} className='container mt-4'>
-          <h4 className='text-center'>Sign up here!</h4>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Name</Form.Label>
-          <input className='form-control' name='text' type="text" placeholder="user name" required />
-          <Form.Label>Photo</Form.Label>
-          <input className='form-control' name='url' type="url" placeholder="Photo URL" />
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" name="email" placeholder="Enter email" required />
-          <Form.Text className="text-muted">
-          Email must be valid!
-          </Form.Text>
-          </Form.Group>
+        <>
+          { (loggedinuser) ? <h3>Please logout first!!</h3> : <Form onSubmit={handleRegisterSubmit} className='container mt-4'>
+        <h4 className='text-center'>Sign up here!</h4>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Name</Form.Label>
+        <input className='form-control' name='text' type="text" placeholder="user name" required />
+        <Form.Label>Photo</Form.Label>
+        <input className='form-control' name='url' type="url" placeholder="Photo URL" />
+        <Form.Label>Email address</Form.Label>
+        <Form.Control type="email" name="email" placeholder="Enter email" required />
+        <Form.Text className="text-muted">
+        Email must be valid!
+        </Form.Text>
+        </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" name="password" placeholder="Password" required />
-          </Form.Group>
-          <p>{error}</p>
-          <p>{success}</p>
-          <Button variant="primary" type="submit">
-          Submit
-          </Button>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="password" name="password" placeholder="Password" required />
+        </Form.Group>
+        <p>{error}</p>
+        <p>{success}</p>
+        <Button variant="primary" type="submit">
+        Submit
+        </Button>
 
-        </Form>
+      </Form> }
+        </>
     );
 };
 
