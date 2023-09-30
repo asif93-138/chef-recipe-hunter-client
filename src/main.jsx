@@ -13,7 +13,6 @@ import SignUp from './components/SignUp/SineUp.jsx';
 import PON from './components/PON/PON.jsx';
 import Blog from './components/Blog/Blog.jsx';
 import AuthProvider from './providers/AuthProvider';
-import SecuredPage from './components/SecuredPage/SecuredPage.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
@@ -28,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <Details />,
+        element: <PrivateRoute><Details /></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:3000/chefs/${params.id}`)
       },
       {
@@ -42,10 +41,6 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog />,
-      },
-      {
-        path: "/protected",
-        element: <PrivateRoute><SecuredPage /></PrivateRoute>,
       },
       {
         path: '*',

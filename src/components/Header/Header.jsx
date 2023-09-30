@@ -28,9 +28,6 @@ const Header = () => {
           <li className="nav-item">
           <ActiveLink className='nav-link' to='/blog'>Blog</ActiveLink>
           </li>
-          <li className="nav-item">
-          <ActiveLink className='nav-link' to='/protected'>Protected</ActiveLink>
-          </li>
           
           {loggedinuser ? <><li className="nav-item"><Link className='nav-link' onClick={signedout}>Log out</Link></li><li className="nav-item"><img title={loggedinuser?.displayName} src={loggedinuser.photoURL} className='w-fix rounded-circle ms-1' /></li></>:<li className="nav-item"><ActiveLink className='nav-link' to='/login'>Login</ActiveLink></li>}
           
