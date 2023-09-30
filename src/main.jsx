@@ -23,12 +23,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Chefs />,
-        loader: () => fetch('http://localhost:3000/chefs')
+        loader: () => fetch('https://my-first-server-9sqxo11il-asif93-138.vercel.app/chefs')
       },
       {
         path: "/details/:id",
         element: <PrivateRoute><Details /></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:3000/chefs/${params.id}`)
+        loader: ({params}) => fetch(`https://my-first-server-9sqxo11il-asif93-138.vercel.app/chefs/${params.id}`)
       },
       {
         path: "/login",
